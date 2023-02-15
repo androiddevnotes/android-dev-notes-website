@@ -9,6 +9,7 @@ image: "/static/img/androiddevnotes-social.png"
 ---
 
 import ImageDisplay from '/src/utils/ImageDisplay';
+import { TwitterTweetEmbed } from 'react-twitter-embed';
 
 # Build an Analog Compose Clock with Particle Effect in Jetpack Compose
 
@@ -25,6 +26,12 @@ export const imageUrls = [
 ];
 
 <ImageDisplay imageUrls={imageUrls} />
+
+## Demo
+
+<TwitterTweetEmbed
+  tweetId={'1624557407740301312'}
+/>
 
 ## Code
 
