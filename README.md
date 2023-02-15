@@ -4,7 +4,7 @@ The website of Android Dev Notes.
 
 Explore the Android development resources and notes. Contribute to it and make it better.
 
-## Build Instructions for Docusaurus
+## Build Instructions
 
 ### Clone the repository
 
