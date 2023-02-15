@@ -143,6 +143,11 @@ const config = {
           {
             label: 'Random',
             to: '/random',
+            position: 'left'
+          },
+          {
+            label: 'Daily',
+            to: '/insights/daily/2023/02',
             position: 'left',
             className: 'new-badge',
           },
