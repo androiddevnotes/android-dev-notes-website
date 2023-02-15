@@ -1,0 +1,108 @@
+<!--Add css file-->
+<head>
+  <link rel='stylesheet' type='text/css' href='styles.css'>
+</head>
+
+<script>
+  function showMenu(menu) {
+    console.log('adding class', menu);
+    document.body.classList.remove('sources');
+    document.body.classList.add(menu);
+  }
+
+  window.showMenu = showMenu;
+</script>
+
+<div class='topics-dropdown flex max-w-lg flex-col rounded-2xl lg:min-w-[768px]'>
+  <div class='flex flex-col bg-secondary-800 p-4 lg:flex-row'>
+    <div class='flex flex-1 flex-col gap-8 rounded-xl bg-secondary-1000 p-6'>
+      <a
+        data-dropdown-topics-menu='sources'
+        onfocus="document.body.setAttribute('data-topic-menu', 'sources')"
+        onmouseover="document.body.setAttribute('data-topic-menu', 'sources')"
+        class='flex cursor-pointer items-start justify-start gap-2 border-none bg-transparent text-black dark:text-white'
+        href='/apps'
+      >
+        <div class='flex-shrink-0'>
+          <img
+            src='https://storage.androiddevnotes.com/api/raw/?path=/assets/1/13x1.png'
+            class='h-6 w-6'
+          />
+        </div>
+        <div class='flex flex-col items-start justify-start gap-1'>
+          <div class='text-base font-semibold'>Sources</div>
+          <p class='mb-0 text-left text-sm text-text-400'>
+            This section focuses on the Android app developer&apos;s tech stack.
+          </p>
+        </div>
+      </a>
+    </div>
+    <div class='flex-1 p-6'>
+      <div class='flex gap-2' data-dropdown-topics='sources'>
+        <div class='flex-1'>
+          <h3>Code</h3>
+
+          <ul class='list-none pl-0'>
+            <li>
+              <a href='/apps' class='topic-link'>
+                <img
+                  src='https://storage.androiddevnotes.com/api/raw/?path=/assets/1/9x1.png'
+                  alt='Android Apps'
+                  class='w-6 h-6 object-contain'
+                />
+                Apps
+              </a>
+            </li>
+            <li>
+              <a href='/libraries' class='topic-link'>
+                <img
+                  src='https://storage.androiddevnotes.com/api/raw/?path=/assets/1/3x1.png'
+                  alt='Android Apps'
+                  class='w-6 h-6 object-contain'
+                />
+                Libraries
+              </a>
+            </li>
+            <li>
+              <a href='/tools' class='topic-link'>
+                <img
+                  src='https://storage.androiddevnotes.com/api/raw/?path=/assets/1/6x1.png'
+                  alt='Android Apps'
+                  class='w-6 h-6 object-contain'
+                />
+                Tools
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class='flex-1'>
+          <h3>Learn</h3>
+
+          <ul class='list-none pl-0'>
+            <li>
+              <a href='/tutorials' class='topic-link'>
+                <img
+                  src='https://storage.androiddevnotes.com/api/raw/?path=/assets/1/7x1.png'
+                  alt='Android Tutorials'
+                  class='w-6 h-6 object-contain'
+                />
+                Tutorials
+              </a>
+            </li>
+            <li>
+              <a href='/insights' class='topic-link'>
+                <img
+                  src='https://storage.androiddevnotes.com/api/raw/?path=/assets/1/1x1.png'
+                  alt='Android Insights'
+                  class='w-6 h-6 object-contain'
+                />
+                Insights
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
