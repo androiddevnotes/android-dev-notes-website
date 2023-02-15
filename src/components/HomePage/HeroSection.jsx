@@ -28,7 +28,7 @@ export default function HeroSection() {
               Explore Android
             </Link>
             <Link
-              href="https://github.com/androiddevnotes/android-dev-notes/blob/main/CONTRIBUTING.md"
+              href="https://github.com/androiddevnotes/android-dev-notes-website/blob/main/CONTRIBUTING.md"
               className="rounded-sm border border-solid border-primary bg-primary/10 px-12 py-2.5 text-center font-semibold text-primary hover:text-primary dark:border-primary-100 dark:text-primary-100"
             >
               Contributing Guide
