@@ -12,38 +12,56 @@ const RandomUrl = () => {
                 <main>
                     <BrowserOnly>
                         {() => {
-                            if (process.env.NODE_ENV === 'development') {
-                                const corsProxy = 'https://cors-anywhere.herokuapp.com/';
-                                fetch(corsProxy + 'https://www.androiddevnotes.com/sitemap.xml')
-                                    .then(response => response.text())
-                                    .then(sitemapXml => {
-                                        const parser = new DOMParser();
-                                        const xmlDoc = parser.parseFromString(sitemapXml, 'text/xml');
+                          // eslint-disable-next-line no-undef
+                          if (process.env.NODE_ENV === 'development') {
+                            const corsProxy = 'https://cors-anywhere.herokuapp.com/';
+                            fetch(corsProxy + 'https://www.androiddevnotes.com/sitemap.xml')
+                              .then(response => response.text())
+                              .then(sitemapXml => {
+                                const parser = new DOMParser();
+                                const xmlDoc = parser.parseFromString(sitemapXml, 'text/xml');
+                                const locElements = xmlDoc.getElementsByTagName('loc');
+                                const urls = [];
 
-                                        const locElements = xmlDoc.getElementsByTagName('loc');
-                                        const randomIndex = Math.floor(Math.random() * locElements.length);
-                                        const randomUrl = locElements[randomIndex].textContent;
+                                for (let i = 0; i < locElements.length; i++) {
+                                  const url = locElements[i].textContent;
+                                  if (url.indexOf('/tags/') === -1) {
+                                    urls.push(url);
+                                  }
+                                }
 
-                                        window.location.href = randomUrl;
-                                    })
-                                    .catch(error => console.error(error));
-                            } else {
-                                fetch(siteConfig.url + siteConfig.baseUrl + 'sitemap.xml')
-                                    .then(response => response.text())
-                                    .then(sitemapXml => {
-                                        const parser = new DOMParser();
-                                        const xmlDoc = parser.parseFromString(sitemapXml, 'text/xml');
+                                const randomIndex = Math.floor(Math.random() * urls.length);
+                                const randomUrl = urls[randomIndex];
 
-                                        const locElements = xmlDoc.getElementsByTagName('loc');
-                                        const randomIndex = Math.floor(Math.random() * locElements.length);
-                                        const randomUrl = locElements[randomIndex].textContent;
+                                window.location.href = randomUrl;
+                              })
+                              .catch(error => console.error(error));
+                          } else {
+                            fetch(siteConfig.url + siteConfig.baseUrl + 'sitemap.xml')
+                              .then(response => response.text())
+                              .then(sitemapXml => {
+                                const parser = new DOMParser();
+                                const xmlDoc = parser.parseFromString(sitemapXml, 'text/xml');
+                                const locElements = xmlDoc.getElementsByTagName('loc');
+                                const urls = [];
 
-                                        window.location.href = randomUrl;
-                                    })
-                                    .catch(error => console.error(error));
-                            }
+                                for (let i = 0; i < locElements.length; i++) {
+                                  const url = locElements[i].textContent;
+                                  if (url.indexOf('/tags/') === -1) {
+                                    urls.push(url);
+                                  }
+                                }
 
-                            return (
+                                const randomIndex = Math.floor(Math.random() * urls.length);
+                                const randomUrl = urls[randomIndex];
+
+                                window.location.href = randomUrl;
+                              })
+                              .catch(error => console.error(error));
+                          }
+
+
+                          return (
                                 <div className={styles.container}>
                                     <button
                                         className={styles.diceButton}
