@@ -1,0 +1,44 @@
+---
+title: "Using testTag in Maestro as Resource IDs to identify a composable"
+sidebar_label: "Maestro testTag"
+slug: "/maestro/testtag"
+description: "Using testTag in Maestro as Resource IDs to make UI tests more robust"
+tags: [Android, Maestro, UI Tests, testTag, Jetpack Compose]
+keywords: [Android, Maestro, UI Tests, testTag, Jetpack Compose, Android Dev Notes]
+image: "/static/img/androiddevnotes-social.png"
+---
+
+import ImageDisplay from '/src/utils/ImageDisplay';
+
+# Using testTag in Maestro as Resource IDs to identify a composable
+
+## Overview
+
+To identify a composable:
+
+```kotlin
+Button(
+        text = "hello",
+        modifier = Modifier.semantics { testTagsAsResourceId = true }.testTag("test_tag_button_hello")
+    )
+```
+
+In Maestro Studio, you can then identify above composable via testTag `test_tag_button_hello`.
+
+Notice, `testTagsAsResourceId = true` is required to make it work.
+
+## Demo
+
+export const imageUrls = [
+  'https://storage.androiddevnotes.com/api/raw/?path=/assets/4/1x1.png',
+];
+
+<ImageDisplay imageUrls={imageUrls} />
+
+## Tutorial
+
+* [Android - Jetpack Compose - Maestro by mobile.dev](https://maestro.mobile.dev/platform-support/android-jetpack-compose#interacting-with-composable-with-accessibility)
+
+Although above is an official tutorial, I found out that it is not working. I have to add `testTagsAsResourceId = true` to make it work.
+
+🐣
