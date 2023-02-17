@@ -40,6 +40,7 @@
     "react-twitter-embed": "^4.0.4"
   },
   "devDependencies": {
+    "@giscus/react": "^2.2.6",
     "autoprefixer": "^10.4.13",
     "buffer": "^6.0.3",
     "docusaurus-plugin-typedoc": "^0.18.0",
