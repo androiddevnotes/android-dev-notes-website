@@ -31,7 +31,7 @@ function defineSection(section, version = {}, options = {}) {
       id: section,
       sidebarPath: require.resolve('./sidebars-default.js'),
       breadcrumbs: true,
-      editUrl: 'https://github.com/androiddevnotes/website/tree/main/',
+      editUrl: 'https://github.com/androiddevnotes/android-dev-notes-website/tree/main/',
       showLastUpdateAuthor: true,
       showLastUpdateTime: true,
       versions: version && {
