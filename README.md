@@ -80,7 +80,7 @@ This command starts a local development server and open up a browser window. Mos
 
 Website is running at http://localhost:3000/
 
-Before contributing, you can optionally run the website locally to see if your changes look good abd then create a pull request.
+Before contributing, you can optionally run the website locally to see if your changes look good and then create a pull request.
 
 ## Contributing
 
