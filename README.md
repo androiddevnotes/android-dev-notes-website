@@ -22,6 +22,8 @@ In the Apps section, you can add open source apps that you have found useful and
 
 Example: Found an okay app with modern architecture and want to share it with others? Add it to the Apps section.
 
+Format: The format for title is flexible. However, usually it is: `App Name - Short intro`. For example, `Palov - A Recipe App in Jetpack Compose`.
+
 ### Libraries section
 
 In the Libraries section, you can add libraries that you have found useful and think others will find useful too.
