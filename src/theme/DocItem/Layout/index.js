@@ -58,7 +58,7 @@ export default function DocItemLayout({ children }) {
           repoId='R_kgDOI995WA'
           category='Comments'
           categoryId='DIC_kwDOI995WM4CURne'
-          mapping='pathname'
+          mapping='title'
           reactionsEnabled='1'
           emitMetadata='0'
           inputPosition='top'
