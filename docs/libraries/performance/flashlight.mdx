@@ -1,0 +1,67 @@
+---
+title: "Flashlight - Measure performance of your Android app"
+sidebar_label: "Flashlight"
+slug: "/bamlab/flashlight"
+description: "Measure performance of your Android app with Flashlight, a Lighthouse-like tool for Android"
+tags: [Android, Performance, Flashlight, Lighthouse, Flutter, Maestro, React Native, Testing]
+keywords: [Android, Performance, Flashlight, Lighthouse, Flutter, Maestro, React Native, Testing, Android Dev Notes]
+image: "/static/img/androiddevnotes-social.png"
+---
+
+import ImageDisplay from '/src/utils/ImageDisplay';
+
+# Flashlight - Measure performance of your Android app
+
+## Overview
+
+Flashlight helps measure performance of the Android app. It is self-hosted, open source, and can be used with any Android app. It is inspired by Lighthouse, a tool for measuring performance of web apps.
+
+Flashlight can be integrated with Maestro, Appium and other tools for UI testing.
+
+## Installation
+
+You can find the installation instructions [here](https://docs.flashlight.dev/).
+
+But, in short, you need to:
+
+* Install CLI
+  ```
+  curl https://get.flashlight.dev/ | bash
+  ```
+
+* You can maesure performance of your app with the following command:
+  ```
+  flashlight measure
+  ```
+  When it's running, open the app on your device, interact with it, when you're done, press `w` in the terminal to write the results to a file.
+
+export const imageUrlsFlashlightMeasure = [
+  'https://storage.androiddevnotes.com/api/raw/?path=/assets/6/1x1.png',
+];
+
+<ImageDisplay imageUrls={imageUrlsFlashlightMeasure} />
+
+* View the results in the browser
+  ```
+  flashlight report <your results.json>
+  ```
+
+export const imageUrlsViewReport = [
+  'https://storage.androiddevnotes.com/api/raw/?path=/assets/6/2x1.png',
+];
+
+<ImageDisplay imageUrls={imageUrlsViewReport} />
+
+## Sample usage
+
+* [Getting started | Flashlight](https://docs.flashlight.dev/#simple-usage) - basic flashlight measure usage
+
+* [Usage with Maestro | Flashlight](https://docs.flashlight.dev/test/maestro) - measure the startup performance of the Twitter app
+
+## Summary
+
+Flashlight looks something that could have a place in app dev workflow. It's easy to use, open source, and can be integrated with other tools!
+
+Try it out, run the code!
+
+🐣
