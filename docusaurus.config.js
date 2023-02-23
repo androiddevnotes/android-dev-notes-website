@@ -12,8 +12,8 @@ const isDev = process.env.NODE_ENV === 'development';
 /** @type {import('@docusaurus/preset-classic').Options} */
 const defaultSettings = {
   remarkPlugins: [
-    [require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }],
-  ],
+    [require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }]
+  ]
 };
 
 /**
@@ -36,12 +36,12 @@ function defineSection(section, version = {}, options = {}) {
       showLastUpdateTime: true,
       versions: version && {
         current: {
-          label: version.label,
-        },
+          label: version.label
+        }
       },
       ...defaultSettings,
-      ...options,
-    }),
+      ...options
+    })
   ];
 }
 
@@ -50,7 +50,7 @@ const SECTIONS = [
   defineSection('tutorials'),
   defineSection('tools'),
   defineSection('libraries'),
-  defineSection('insights'),
+  defineSection('insights')
 ];
 
 const topicHTML = fs.readFileSync('./src/snippets/topics.html', 'utf-8');
@@ -78,7 +78,7 @@ const config = {
   // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en']
   },
 
   clientModules: [require.resolve('./src/css/custom.css')],
@@ -89,9 +89,9 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: false,
-        blog: false,
-      }),
-    ],
+        blog: false
+      })
+    ]
   ],
 
   plugins: [tailwindPlugin, webpackPlugin, ...SECTIONS],
@@ -99,21 +99,21 @@ const config = {
   themes: ['@docusaurus/theme-live-codeblock'],
 
   themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+  /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       image: '/img/androiddevnotes-social',
       colorMode: {
-        defaultMode: 'dark',
+        defaultMode: 'dark'
       },
       docs: {
         sidebar: {
-          hideable: true,
-        },
+          hideable: true
+        }
       },
       announcementBar: {
         id: 'ph-banner',
         content: '<ph-banner></ph-banner>',
-        isCloseable: false,
+        isCloseable: false
       },
       navbar: {
         // NOTE: hideOnScroll breaks on `/api`, enable when fixed
@@ -125,7 +125,7 @@ const config = {
             'https://storage.androiddevnotes.com/api/raw/?path=/assets/1/12x1.png',
           alt: 'Android Dev Notes',
           height: '100%',
-          width: '100%',
+          width: '100%'
         },
         items: [
           {
@@ -136,9 +136,9 @@ const config = {
               {
                 type: 'html',
                 value: topicHTML,
-                className: 'common-dropdown',
-              },
-            ],
+                className: 'common-dropdown'
+              }
+            ]
           },
           {
             label: 'Random',
@@ -149,13 +149,19 @@ const config = {
             label: 'Daily',
             to: '/insights/daily/2023/02',
             position: 'left',
-            className: 'new-badge',
+            className: 'new-badge'
           },
           {
             type: 'search',
-            position: 'right',
+            position: 'right'
           },
-        ],
+          {
+            href: 'https://github.com/androiddevnotes/android-dev-notes-website',
+            'aria-label': 'GitHub Repository',
+            position: 'right',
+            className: 'header-github-link'
+          }
+        ]
       },
       prism: {
         theme: lightCodeTheme,
@@ -178,31 +184,31 @@ const config = {
           'erlang',
           'perl',
           'lua',
-          'clojure',
+          'clojure'
         ],
         magicComments: [
           {
             className: 'theme-code-block-highlighted-line',
             line: 'highlight-next-line',
-            block: { start: 'highlight-start', end: 'highlight-end' },
+            block: { start: 'highlight-start', end: 'highlight-end' }
           },
           {
             className: 'code-block-error-line',
-            line: 'highlight-next-line-error',
-          },
-        ],
+            line: 'highlight-next-line-error'
+          }
+        ]
       },
       liveCodeBlock: {
-        playgroundPosition: 'bottom',
+        playgroundPosition: 'bottom'
       },
       algolia: {
         appId: 'DJPMO7H2DC',
         apiKey: 'fbaa41f88b78006e0e03841b0ca255a9',
         indexName: 'index-website-android-dev-notes',
         contextualSearch: true,
-        searchParameters: {},
-      },
-    }),
+        searchParameters: {}
+      }
+    })
 };
 
 module.exports = config;
