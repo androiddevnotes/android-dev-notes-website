@@ -1,2 +1,3 @@
 User-agent: *
 Disallow:
+Sitemap: https://www.androiddevnotes.com/sitemap.xml
