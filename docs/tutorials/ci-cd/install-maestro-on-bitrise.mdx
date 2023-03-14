@@ -1,0 +1,38 @@
+---
+title: "Install Maestro on Bitrise"
+sidebar_label: "Install Maestro on Bitrise"
+slug: "/maestro/install-maestro-on-bitrise"
+description: "The tutorial shows how to install Maestro on Bitrise"
+tags: [Android, Maestro, CI/CD, Bitrise]
+keywords: [Android, Maestro, CI/CD, Bitrise, Android Dev Notes]
+image: "/static/img/androiddevnotes-social.png"
+---
+
+# Install Maestro on Bitrise
+
+## Overview
+
+To install Maestro on Bitrise, you can use the following script:
+
+```bash
+#!/bin/sh
+
+set -ex
+
+# Maestro version
+if [[ -z "$maestro_cli_version" ]]; then
+    echo "If you want to install a specific version of Maestro CLI, please set the environment variable maestro_cli_version to the version you want to install."
+else
+    echo "Installing Maestro CLI version $maestro_cli_version"
+    export MAESTRO_VERSION=$maestro_cli_version;
+fi
+
+# Install maestro CLI
+echo "Installing Maestro CLI"
+curl -Ls "https://get.maestro.mobile.dev" | bash
+export PATH="$PATH":"$HOME/.maestro/bin"
+echo "MAESTRO INSTALLED - Check Version"
+maestro -v
+```
+
+🐣
