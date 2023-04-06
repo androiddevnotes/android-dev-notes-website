@@ -147,7 +147,7 @@ const config = {
           },
           {
             label: 'Daily',
-            to: '/insights/daily/2023/02',
+            to: '/insights/daily/2023/04',
             position: 'left',
             className: 'new-badge'
           },
