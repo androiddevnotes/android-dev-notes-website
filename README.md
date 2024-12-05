@@ -30,6 +30,10 @@ In Libraries section, you can add libraries that you have found useful and think
 
 Example: Found a new library for image processing and want to share it with others? Add it to the Libraries section.
 
+### Socials section
+
+In Socials section, you can add socials related to android dev notes like X, YouTube!
+
 ### Tools section
 
 In Tools section, you can add tools that you have found useful and think others will find useful too.
